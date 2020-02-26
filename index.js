@@ -11,5 +11,5 @@ app.get("/", (req, res) => {
 // environment variable
 // figure out what Heroku provides
 // or when running on our machine, listen to 5000
-const PORT = porcess.env.PORT || 5000; 
+const PORT = process.env.PORT || 5000; 
 app.listen(PORT);
