@@ -1,7 +1,7 @@
 const express = require("express"); // common js module
 const mongoose = require("mongoose"); // connect mongoose
 const keys = require("./config/keys");
-const cookieSession = require('cookie-Session');
+const cookieSession = require('cookie-session');
 const passport = require('passport'); // tell passport to use cookie session
 // to import express by using require keyword
 // import express from 'express';
