@@ -21,12 +21,18 @@ module.exports = app => {
 		// logout will kill the cookie in req object
 		// and send back to res to client
 		req.logout();
-		res.send(req.user);
+		res.redirect('/');
 	})
 
 	// a second route handler to handle the code we get from google
 	// passport will do that for us
-	app.get("/auth/google/callback", passport.authenticate("google"));
+	app.get(
+		"/auth/google/callback", 
+		passport.authenticate("google"),
+		(req, res) => {
+			res.redirect('/surveys');
+		}
+	);
 
 	// test router handler
 	app.get('/api/current_user', (req, res) => {
