@@ -10,6 +10,7 @@ const passport = require('passport'); // tell passport to use cookie session
 
 // need to register model first before require it in passport
 require("./models/User");
+require("./models/Survey");
 // require passport.js file to execute
 // we don't need to pull out the code in it
 // we just need it to execute
@@ -39,6 +40,7 @@ app.use(passport.session());
 // this line execute the authRoutes
 require("./routes/authRoutes")(app);
 require("./routes/billingRoutes")(app);
+require("./routes/surveyRoutes")(app);
 
 if(process.env.NODE_ENV === 'production') {
 	// Express will serve up prod assets

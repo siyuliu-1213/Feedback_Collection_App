@@ -8,6 +8,11 @@ import reduxThunk from "redux-thunk";
 import App from "./components/App";
 import reducers from './reducers';
 
+//for testing POST method
+//adding this library allow us to directly access to axios
+import axios from 'axios';
+window.axios = axios;
+
 
 // first parameter: reducer
 const store = createStore( reducers,{}, applyMiddleware(reduxThunk));
